@@ -15,7 +15,6 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
-
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
@@ -25,8 +24,8 @@ cacheSolve <- function(x, ...) {
     message("getting cached inverse")
     return(inverse)
   }
-  data <- x$get()
-  inverse <- solve(data, ...)
-  x$setinverse(inverse)
+  data <- x$get()               #matrix stored in data
+  inverse <- solve(data, ...)   #Actual inverse done in this step
+  x$setinverse(inverse) 
   inverse
 }
